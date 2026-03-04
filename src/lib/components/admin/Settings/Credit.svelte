@@ -394,76 +394,77 @@
 						</div>
 					</div>
 
-				<div class="mb-3">
-					<div class=" mb-2.5 text-base font-medium">Sparkloc {$i18n.t('Payment')}</div>
-					<hr class=" border-gray-100 dark:border-gray-850 my-2" />
-					<div class="mt-2 flex w-full justify-between">
-						<div class=" self-center text-xs font-medium">Sparkloc Token</div>
-					</div>
-					<div class="flex mt-2 space-x-2">
-						<SensitiveInput
-							outerClassName="w-full flex flex-1 rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
-							bind:value={config.SPARKLOC_PAYMENT_TOKEN}
-							required={false}
-						/>
-					</div>
-					<div class="mt-2 flex w-full justify-between">
-						<div class=" self-center text-xs font-medium">Sparkloc Payment ID</div>
-					</div>
-					<div class="flex mt-2 space-x-2">
-						<input
-							class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
-							bind:value={config.SPARKLOC_PAYMENT_ID}
-						/>
-					</div>
-					<div class="mt-2 flex w-full justify-between">
-						<div class=" self-center text-xs font-medium">{$i18n.t('OpenWebUI Host')}</div>
-					</div>
-					<div class="text-xs text-gray-400 dark:text-gray-500">
-						{$i18n.t(
-							'The address of your service must be accessible; do not include any paths, only the HTTP protocol and the domain name'
-						)}
-					</div>
-					<div class="flex mt-2 space-x-2">
-						<input
-							class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
-							bind:value={config.SPARKLOC_CALLBACK_HOST}
-						/>
-					</div>
-				</div>
-
-				<div class="mb-3">
-					<div class=" mb-2.5 text-base font-medium">{$i18n.t('Daily Check-in')}</div>
-					<hr class=" border-gray-100 dark:border-gray-850 my-2" />
-					<div class="mb-2.5 flex w-full justify-between">
-						<div class=" self-center text-xs font-medium">
-							{$i18n.t('Enable Check-in')}
+					<div class="mb-3">
+						<div class=" mb-2.5 text-base font-medium">Sparkloc {$i18n.t('Payment')}</div>
+						<hr class=" border-gray-100 dark:border-gray-850 my-2" />
+						<div class="mt-2 flex w-full justify-between">
+							<div class=" self-center text-xs font-medium">Sparkloc Token</div>
 						</div>
-						<Switch bind:state={config.CHECKIN_ENABLED} />
+						<div class="flex mt-2 space-x-2">
+							<SensitiveInput
+								outerClassName="w-full flex flex-1 rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+								bind:value={config.SPARKLOC_PAYMENT_TOKEN}
+								required={false}
+							/>
+						</div>
+						<div class="mt-2 flex w-full justify-between">
+							<div class=" self-center text-xs font-medium">Sparkloc Payment ID</div>
+						</div>
+						<div class="flex mt-2 space-x-2">
+							<input
+								class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+								bind:value={config.SPARKLOC_PAYMENT_ID}
+							/>
+						</div>
+						<div class="mt-2 flex w-full justify-between">
+							<div class=" self-center text-xs font-medium">{$i18n.t('OpenWebUI Host')}</div>
+						</div>
+						<div class="text-xs text-gray-400 dark:text-gray-500">
+							{$i18n.t(
+								'The address of your service must be accessible; do not include any paths, only the HTTP protocol and the domain name'
+							)}
+						</div>
+						<div class="flex mt-2 space-x-2">
+							<input
+								class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+								bind:value={config.SPARKLOC_CALLBACK_HOST}
+							/>
+						</div>
 					</div>
-					<div class="flex mt-2 w-full justify-between">
-						<div class=" self-center text-xs font-medium">{$i18n.t('Min Credit')}</div>
-					</div>
-					<div class="flex mt-2 space-x-2">
-						<input
-							class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
-							bind:value={config.CHECKIN_MIN_CREDIT}
-							type="number"
-							step="0.01"
-							min="0"
-						/>
-					</div>
-					<div class="flex mt-2 w-full justify-between">
-						<div class=" self-center text-xs font-medium">{$i18n.t('Max Credit')}</div>
-					</div>
-					<div class="flex mt-2 space-x-2">
-						<input
-							class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
-							bind:value={config.CHECKIN_MAX_CREDIT}
-							type="number"
-							step="0.01"
-							min="0"
-						/>
+
+					<div class="mb-3">
+						<div class=" mb-2.5 text-base font-medium">{$i18n.t('Daily Check-in')}</div>
+						<hr class=" border-gray-100 dark:border-gray-850 my-2" />
+						<div class="mb-2.5 flex w-full justify-between">
+							<div class=" self-center text-xs font-medium">
+								{$i18n.t('Enable Check-in')}
+							</div>
+							<Switch bind:state={config.CHECKIN_ENABLED} />
+						</div>
+						<div class="flex mt-2 w-full justify-between">
+							<div class=" self-center text-xs font-medium">{$i18n.t('Min Credit')}</div>
+						</div>
+						<div class="flex mt-2 space-x-2">
+							<input
+								class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+								bind:value={config.CHECKIN_MIN_CREDIT}
+								type="number"
+								step="0.01"
+								min="0"
+							/>
+						</div>
+						<div class="flex mt-2 w-full justify-between">
+							<div class=" self-center text-xs font-medium">{$i18n.t('Max Credit')}</div>
+						</div>
+						<div class="flex mt-2 space-x-2">
+							<input
+								class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+								bind:value={config.CHECKIN_MAX_CREDIT}
+								type="number"
+								step="0.01"
+								min="0"
+							/>
+						</div>
 					</div>
 				</div>
 			</div>
