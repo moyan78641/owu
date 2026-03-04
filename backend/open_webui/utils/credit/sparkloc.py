@@ -70,3 +70,6 @@ class SparklocClient:
             data = resp.json()
             log.info("sparkloc create_trade resp: %s", data)
             return data
+
+
+sparkloc_client = SparklocClient()
