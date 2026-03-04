@@ -67,14 +67,6 @@
 	let payType = 'alipay';
 	let payTypes = [
 		{
-			code: 'alipay',
-			title: $i18n.t('Alipay')
-		},
-		{
-			code: 'wxpay',
-			title: $i18n.t('WXPay')
-		},
-		{
 			code: 'sparkloc',
 			title: 'Sparkloc'
 		}
