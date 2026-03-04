@@ -30,9 +30,7 @@ class SparklocClient:
         """Generate HMAC-SHA256 signature for params"""
         secret_key = self._get_secret_key()
         # sort params alphabetically, exclude 'signature' itself
-        sorted_params = sorted(
-            (k, v) for k, v in params.items() if k != "signature"
-        )
+        sorted_params = sorted((k, v) for k, v in params.items() if k != "signature")
         param_string = "&".join(f"{k}={v}" for k, v in sorted_params)
         signature = hmac.new(
             secret_key.encode(),

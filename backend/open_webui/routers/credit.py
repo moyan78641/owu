@@ -568,9 +568,7 @@ async def get_checkin_status(
         .replace(hour=0, minute=0, second=0, microsecond=0)
         .timestamp()
     )
-    logs = CreditLogs.get_credit_log_by_page(
-        user_ids=[user.id], offset=0, limit=50
-    )
+    logs = CreditLogs.get_credit_log_by_page(user_ids=[user.id], offset=0, limit=50)
     for log_item in logs:
         if (
             log_item.created_at >= today_start
@@ -586,9 +584,7 @@ async def get_checkin_status(
 
 
 @router.post("/checkin")
-async def do_checkin(
-    request: Request, user: UserModel = Depends(get_verified_user)
-):
+async def do_checkin(request: Request, user: UserModel = Depends(get_verified_user)):
     """Perform daily check-in"""
     enabled = request.app.state.config.CHECKIN_ENABLED
     if not enabled:
@@ -600,9 +596,7 @@ async def do_checkin(
         .replace(hour=0, minute=0, second=0, microsecond=0)
         .timestamp()
     )
-    logs = CreditLogs.get_credit_log_by_page(
-        user_ids=[user.id], offset=0, limit=50
-    )
+    logs = CreditLogs.get_credit_log_by_page(user_ids=[user.id], offset=0, limit=50)
     for log_item in logs:
         if (
             log_item.created_at >= today_start
