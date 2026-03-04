@@ -538,7 +538,7 @@ async def sparkloc_callback(request: Request) -> RedirectResponse:
         return RedirectResponse(url="/", status_code=302)
 
     # find ticket
-    out_trade_no = callback.get("out_trade_no", "")
+    out_trade_no = callback.get("order_id", "")
     ticket = TradeTickets.get_ticket_by_id(out_trade_no)
     if not ticket:
         log.warning("sparkloc callback no ticket found: %s", out_trade_no)

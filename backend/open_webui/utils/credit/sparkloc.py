@@ -53,7 +53,7 @@ class SparklocClient:
         callback_host = SPARKLOC_CALLBACK_HOST.value.rstrip("/")
 
         params = {
-            "out_trade_no": out_trade_no,
+            "order_id": out_trade_no,
             "amount": f"{amount:.2f}",
             "description": f"{WEBUI_NAME} Credit",
             "notify_url": f"{callback_host}/api/v1/credit/callback/sparkloc",
