@@ -123,6 +123,11 @@
 			return true;
 		}
 
+		if (detail?.payment_url) {
+			window.location.href = detail.payment_url;
+			return true;
+		}
+
 		if (detail?.urlscheme) {
 			window.location.href = detail.urlscheme;
 			return true;
