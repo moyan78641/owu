@@ -153,7 +153,7 @@
 			// Sparkloc: 直接通过 payment_url 跳转
 			if (payType === 'sparkloc') {
 				if (detail?.payment_url) {
-					window.open(detail.payment_url, '_blank');
+					window.location.href = detail.payment_url;
 				} else {
 					toast.error(detail?.message || 'Payment initialization failed');
 				}
