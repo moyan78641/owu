@@ -149,6 +149,18 @@
 			}
 
 			const detail = tradeInfo.detail;
+
+			// Sparkloc: 直接通过 payment_url 跳转
+			if (payType === 'sparkloc') {
+				if (detail?.payment_url) {
+					window.open(detail.payment_url, '_blank');
+				} else {
+					toast.error(detail?.message || 'Payment initialization failed');
+				}
+				return;
+			}
+
+			// EZFP / Alipay: 原有逻辑
 			if (detail?.code !== 1) {
 				toast.error(tradeInfo?.detail?.msg);
 				return;
